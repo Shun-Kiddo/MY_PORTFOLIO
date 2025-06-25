@@ -1,0 +1,147 @@
+body,html{
+    font-family: 'Poppins',Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(8, 8, 8);
+    height: auto;
+    width: 100%;
+}
+/* --NAVIGATION MENU-- */
+.navbar {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px rgb(14, 14, 14);
+    background-color: rgb(8, 8, 8); 
+    z-index: 10001;
+    font-weight: bold;
+}
+
+.logo-container {
+    display: flex;
+    margin-left: 200px;
+    align-items: center;
+}
+
+.logo {
+    height: 80px; 
+    border-radius: 90px;
+}
+
+.menu {
+    margin-right: 200px;
+    display: flex;
+    gap: 10px;
+}
+
+.menu a {
+  position: relative; /* Needed for ::after to position properly */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 20px;
+  font-size: 17px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #c8c8c8, #434444);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.menu a:hover {
+  color: #929292;
+}
+
+.Profile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:100px;
+    padding: 60px;
+    flex-wrap: wrap;
+    /*Background image settings */
+    background-image: url('/img/jayson_pc.jpg'); 
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100vh;               
+    color: white;           
+}
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.726); 
+    z-index: 1;
+}
+
+.intro {
+    max-width: 600px;
+    color: #ffffff;
+    text-align: left;
+}
+.name{
+    color:  #ffffff;
+    font-size: 50px;
+}
+.about{
+    font-size: 20px;
+    margin-bottom: 40px;
+
+}
+.about-me-button{
+    background-color: #ffffff;
+    padding: 15px 72px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+}
+.about-me-button:hover{
+    background: linear-gradient(to right, #c8c8c8, #434444);
+    color:#ffffff;
+    transition: 0.5s;
+}
+
+.profile{
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: #666;
+}
+.intro, .profile-img {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 1.5s;
+}
+
+body.loaded .intro,
+body.loaded .profile-img {
+  opacity: 1;
+  transform: translateY(0);
+}
