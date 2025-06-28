@@ -68,6 +68,15 @@ const Home = () => {
     e.preventDefault();
     skillRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageClick = (src) => {
+    setSelectedImage(src);
+  };
+
+  const closePreview = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <>
@@ -207,13 +216,32 @@ const Home = () => {
               </div>
             ))}
           </div>
-        </div>
+          <div className='Certification'>Certification / Achievements</div>
+            <div className='content-certificate'>
+                {!selectedImage && <navbar />}
+                {['/img/CG-honor.jpg', '/img/CG-silver.jpg', '/img/HR-basic.jpg', '/img/CG-bronze.jpg'].map((src, index) => (
+                  <img
+                    key={index}
+                    className={`certificate-${index + 1}`}
+                    src={src}
+                    alt={`Cert ${index + 1}`}
+                    onClick={() => handleImageClick(src)}
+                  /> 
+                ))}
+              
+                {selectedImage && (
+                  <div className="background-overlay" onClick={closePreview}>
+                    <img className="full-image" src={selectedImage} alt="Full Preview" />
+                  </div>
+                )}
+            </div>
+          </div>
       </section>
 
       <section className="Skills" ref={skillRef}>
          <div className="overlay-skill"></div>
          <div className="intro">
-         <h2 className="educ">I MISS YOUU</h2>
+         <h2 className="educ">SKILL</h2>
          </div>
       </section>
 

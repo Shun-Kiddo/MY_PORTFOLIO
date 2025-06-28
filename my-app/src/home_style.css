@@ -6,6 +6,7 @@ body,html{
     height: auto;
     width: auto;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 /* --NAVIGATION MENU-- */
 .navbar {
@@ -17,7 +18,7 @@ body,html{
     padding: 10px 20px;
     box-shadow: 0 0 10px rgb(14, 14, 14);
     background-color: rgb(8, 8, 8); 
-    z-index: 10001;
+    z-index: 1000;
     font-weight: bold;
 }
 
@@ -309,7 +310,6 @@ body,html{
   color:#fff;
 }
 
-
 .about-me-button{
     background: linear-gradient(to right, #c8c8c8, #434444);
     padding: 15px 72px;
@@ -348,7 +348,7 @@ body.loaded .profile-img {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
     gap:100px;
     padding: 60px;
     flex-wrap: wrap;
@@ -357,7 +357,7 @@ body.loaded .profile-img {
     background-size: cover;    
     background-position: center; 
     background-repeat: no-repeat;
-    height: 100vh;               
+    height: auto;               
     color: white;         
 }
 
@@ -383,12 +383,13 @@ body.loaded .profile-img {
   font-weight: bolder;
   letter-spacing: 5px;
   text-align: center;
-  margin-top: -100px;   
+  margin-top: 150px;   
   margin-bottom: -20px;
   margin-left: auto;
   margin-right: auto;
   border-bottom: 4px solid #ff0a0a;
   display: inline-block; 
+ 
 }
 
 .education-level {
@@ -557,6 +558,64 @@ body.loaded .profile-img {
   background-image: url('./img/processing.jpg');
   background-position: center 60%;
 }
+
+.Certification{
+  background: linear-gradient(to right, #c8c8c8, #a69f9f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  border-bottom: 4px solid #ff0a0a;
+  margin-left: 240px;
+  margin-right: 913px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.content-certificate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  max-width: 80%;
+  margin-left:170px;
+}
+
+.certificate-1,
+.certificate-2,
+.certificate-3,
+.certificate-4{
+  height: 300px;
+  width: 420px;
+  cursor: zoom-in;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; 
+}
+
+.full-image {
+  margin-top: 100px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: zoom-out;
+}
+
 
 /*---SKILLS----*/
 
