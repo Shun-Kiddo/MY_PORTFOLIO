@@ -148,8 +148,9 @@ const Home = () => {
         <div className="overlay-education"></div>
         <div className="Education-container">
           <div style={{ textAlign: "center" }}>
-            <h2 className="educ">EDUCATION</h2>
+            <h2 className="educ">Education</h2>
           </div>
+          <h2 className='educ-level'>level / degree</h2>
           <div className="education-level">
             {["COLLEGE","SENIOR HIGH","JUNIOR HIGH","ELEMENTARY"].map((level, index) => (
               <div className="card" key={index}>
@@ -216,10 +217,11 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div className='Certification'>Certification / Achievements</div>
+
+            <h2 className='Certification'>Certification / Achievements</h2>
             <div className='content-certificate'>
                 {!selectedImage && <navbar />}
-                {['/img/CG-honor.jpg', '/img/CG-silver.jpg', '/img/HR-basic.jpg', '/img/CG-bronze.jpg'].map((src, index) => (
+                {['/img/CG-honor.jpg', '/img/CG-silver.jpg', '/img/CG-bronze.jpg','/img/java-tutorial.jpg', '/img/HR-basic.jpg','/img/snh-honor.jpg'].map((src, index) => (
                   <img
                     key={index}
                     className={`certificate-${index + 1}`}
@@ -241,7 +243,7 @@ const Home = () => {
       <section className="Skills" ref={skillRef}>
          <div className="overlay-skill"></div>
          <div className="intro">
-         <h2 className="educ">SKILL</h2>
+         <h2 className="skill-title">SKILL</h2>
          </div>
       </section>
 
