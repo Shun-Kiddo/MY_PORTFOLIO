@@ -247,10 +247,10 @@ const Home = () => {
          </div>
       </section>
 
-      <section className="Education">
-         <div className="overlay"></div>
-         <div className="Education-container">
-         <h2 className="educ">EDUCATION</h2>
+      <section className="Contact">
+         <div className="overlay-contact"></div>
+         <div className="Contact-container">
+         <h2 className="contact-title">Contact Me</h2>
          </div>
       </section>
 
