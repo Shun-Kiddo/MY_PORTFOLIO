@@ -68,8 +68,9 @@ const Home = () => {
     e.preventDefault();
     skillRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-  const [selectedImage, setSelectedImage] = useState(null);
 
+
+  const [selectedImage, setSelectedImage] = useState(null);
   const handleImageClick = (src) => {
     setSelectedImage(src);
   };
@@ -77,6 +78,28 @@ const Home = () => {
   const closePreview = () => {
     setSelectedImage(null);
   };
+
+  const[formData,setFormData]= useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (event) => {
+    const {name,value} = event.target;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent page reload
+    console.log('Form submitted:', formData);
+    // You can send the data to a server here
+  };
+
 
   return (
     <>
@@ -249,9 +272,38 @@ const Home = () => {
 
       <section className="Contact">
          <div className="overlay-contact"></div>
-         <div className="Contact-container">
-         <h2 className="contact-title">Contact Me</h2>
-         </div>
+          <div className="Contact-container">
+            <h2 className="contact-title">Contact Me</h2><br></br> 
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="name">Name:</label><br />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                /><br /><br />
+
+                <label htmlFor="email">Email:</label><br />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                /><br /><br />
+
+                <label htmlFor="message">Message:</label><br />
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                /><br /><br />
+
+                <button type="submit">Submit</button>
+              </form>
+          </div>
       </section>
 
       <a className="up-button"  href="#" onClick={scrollToProfile}>UP</a>

@@ -743,3 +743,7 @@ body.loaded .profile-img {
   border-bottom: 3px solid #ff0a0a;
   display: inline-block; 
 }
+
+.fname{
+  color: #0040ff;
+}
